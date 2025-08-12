@@ -1,22 +1,49 @@
+---
+import '../styles/global.css'
+import Header from '../components/Header.astro'
+import '@fontsource-variable/onest'
+import Footer from '../components/Footer.astro'
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="description" content={Astro.props.description} />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
+	<body class="text-white flex">
+		<div
+			class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+		>
+		</div>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 
-<style>
-	html,
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+	html {
+		font-family: 'onest-variable', system-ui, sans-serif;
+		background: bg-gray-900;
+	}
 	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+		display: flex;
+		flex-direction: column;
+		/* align-items: center; */
+		min-height: 100vh;
+		scroll-behavior: smooth;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
 	}
 </style>

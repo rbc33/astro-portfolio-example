@@ -1,11 +1,80 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from '../components/Welcome.astro'
+import Layout from '../layouts/Layout.astro'
+import Badge from '../components/Badge.astro'
+import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
+import SocialPill from '../components/SocialPill.astro'
+import GithubIcon from '../components/icons/GithubIcon.astro'
+import MailIcon from '../components/icons/MailIcon.astro'
+import Experience from '../components/Experience.astro'
+import Container from '../components/Container.astro'
+import Briefcase from '../components/icons/Briefcase.astro'
+import CodeIcon from '../components/icons/CodeIcon.astro'
+import Projects from '../components/Projects.astro'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Porfolio de Ricardo Benthem - Desarrollador Full-Stack"
+	description="Contratame para desarrollar aplicaciones web y moviles"
+>
+	<main class="px-4">
+		<Container class="pt-44 pb-24">
+			<h1
+				class="text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+			>
+				Hey, soy Ricardo <a
+					href="https://es.linkedin.com/in/ricardo-benthem-ciano-3b152916a"
+					target="_blank"
+					rel="noopener"
+					class="flex items-center justify-center"
+				>
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl opacity-80 max-w-[700px]">
+				<span>+4 de experiencia.</span>
+				<span class="text-yellow-200/90"> Desarrollador Full-Stack </span>
+				<span class="text-red-100/90">de Málaga, España. </span>
+				<span class="opacity-85"
+					>Especializado en llevar proyectos de inicio a fin</span
+				>
+			</h2>
+			<nav class="flex gap-2 mt-4 flex-wrap py-1 px-2">
+				<SocialPill
+					href="https://es.linkedin.com/in/ricardo-benthem-ciano-3b152916a"
+				>
+					<LinkedInIcon class="size-4 lg:size-6" />
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/rbc33">
+					<GithubIcon class="size-4 lg:size-6" />
+					Github
+				</SocialPill>
+				<SocialPill>
+					<MailIcon
+						class="size-4 lg:size-6"
+						href="mailto:ricardobenthem@gmail.com"
+					/>
+					Ricardobenthem@gmail.com
+				</SocialPill>
+			</nav>
+		</Container>
+		<Container id="experiencia">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<Briefcase class="size-7" />
+				Experiencia
+			</h2>
+			<Experience />
+		</Container>
+		<Container id="proyectos">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+				<CodeIcon class="size-7" />
+				Proyectos
+			</h2>
+			<Projects />
+		</Container>
+	</main>
 </Layout>
