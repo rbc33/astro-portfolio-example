@@ -1,10 +1,18 @@
 ---
-import proyectImage from '../assets/gocms.webp'
+import gocmsImage from '../assets/gocms.webp'
+import rawImage from '../assets/raw.webp'
 import Go from './icons/Go.astro'
 import Tailwind from './icons/Tailwind.astro'
 import Lua from './icons/Lua.astro'
 import GinIcon from './icons/GinIcon.astro'
 import HTMX from './icons/HtmxIcon.astro'
+import SocialPill from './SocialPill.astro'
+import GithubIcon from './icons/GithubIcon.astro'
+import ArrowRight from './icons/ArrowRigth.astro'
+import ReactIcon from './icons/ReactIcon.astro'
+import ReactQuery from './icons/ReactQuery.astro'
+import Typescript from './icons/Typescript.astro'
+import Zustand from './icons/Zustand.astro'
 interface Tag {
 	name: string
 	class: string
@@ -46,6 +54,26 @@ const TAGS: Record<string, Tag> = {
 		class: '',
 		icon: Lua,
 	},
+	react: {
+		name: 'React',
+		class: '',
+		icon: ReactIcon,
+	},
+	ts: {
+		name: 'TypeScript',
+		class: '',
+		icon: Typescript,
+	},
+	reactQuery: {
+		name: 'React Query',
+		class: '',
+		icon: ReactQuery,
+	},
+	zustand: {
+		name: 'Zustand',
+		class: '',
+		icon: Zustand,
+	},
 }
 const PROJECTS: Project[] = [
 	{
@@ -54,8 +82,16 @@ const PROJECTS: Project[] = [
 			'Fugiat proident laborum nostrud deserunt. Cillum id eu dolor ea ut ad exercitation dolor exercitation aliquip enim incididunt velit officia. Velit ullamco elit aliqua occaecat nisi est sunt amet dolor ullamco sint officia. Laboris ullamco enim eu fugiat mollit excepteur exercitation duis.',
 		link: 'https://rbenthem.com',
 		github: 'https://github.com/rbc33/gocms',
-		image: proyectImage.src,
+		image: gocmsImage.src,
 		tags: [TAGS.go, TAGS.gin, TAGS.tailwind, TAGS.lua, TAGS.htmx],
+	},
+	{
+		title: 'Raw Games',
+		description: 'Una Réplica de RAWG, para buscar valoraciones de videojuegos',
+		link: 'https://raw-ric-hub.vercel.app/',
+		image: rawImage.src,
+		github: 'https://github.com/rbc33/game-hub',
+		tags: [TAGS.ts, TAGS.react, TAGS.reactQuery, TAGS.zustand],
 	},
 ]
 ---
@@ -79,13 +115,24 @@ const PROJECTS: Project[] = [
 						)
 					)}
 			</ul>
-			<span class="flex gap-x-4 mb-4">
-				{link && <a href={link}>Ver proyecto</a>} <br />
-				{github && <a href={github}>GitHub</a>}
+			<span class="flex gap-x-6 mb-4 ">
+				{link && (
+					<SocialPill href={link}>
+						Ver proyecto
+						<ArrowRight class="size-4 lg:size-6" />
+					</SocialPill>
+				)}
+				<br />
+				{github && (
+					<SocialPill href={github}>
+						<GithubIcon class="size-4 lg:size-6" />
+						Github
+					</SocialPill>
+				)}
 			</span>
 			{image && (
 				<img
-					class="rounded shadow-xl shadow-white/10"
+					class="rounded shadow-xl shadow-white/10 mb-15"
 					src={image}
 					alt={`Captura de pantalla del proyecto ${title}`}
 				/>
