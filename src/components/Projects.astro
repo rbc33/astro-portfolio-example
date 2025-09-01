@@ -1,11 +1,12 @@
 ---
 import gocmsImage from '../assets/gocms.webp'
 import rawImage from '../assets/raw.webp'
+import movieRev from '../assets/movies.webp'
 import Go from './icons/Go.astro'
 import Tailwind from './icons/Tailwind.astro'
 import Lua from './icons/Lua.astro'
 import GinIcon from './icons/GinIcon.astro'
-import HTMX from './icons/HtmxIcon.astro'
+import HTMX from './icons/Htmx.astro'
 import SocialPill from './SocialPill.astro'
 import GithubIcon from './icons/GithubIcon.astro'
 import ArrowRight from './icons/ArrowRigth.astro'
@@ -13,10 +14,15 @@ import ReactIcon from './icons/ReactIcon.astro'
 import ReactQuery from './icons/ReactQuery.astro'
 import Typescript from './icons/Typescript.astro'
 import Zustand from './icons/Zustand.astro'
+import Templ from './icons/Templ.astro'
+import Express from './icons/Express.astro'
+import Mongo from './icons/Mongo.astro'
+import Node from './icons/Node.astro'
 interface Tag {
 	name: string
 	class: string
 	icon?: any
+	iconClass?: string
 }
 
 interface Project {
@@ -29,45 +35,69 @@ interface Project {
 }
 
 const TAGS: Record<string, Tag> = {
+	express: {
+		name: 'Express',
+		class: 'bg-white text-black',
+		icon: Express,
+	},
 	go: {
 		name: 'Golang',
-		class: '',
+		class: 'bg-[rgb(14,106,138)]',
 		icon: Go,
 	},
 	gin: {
 		name: 'Gin',
-		class: '',
+		class: 'bg-white text-black',
 		icon: GinIcon,
 	},
 	tailwind: {
 		name: 'Tailwind CSS',
-		class: '',
+		class: 'bg-[#003159] text-white',
 		icon: Tailwind,
 	},
 	htmx: {
-		name: 'HTMX',
-		class: '',
+		name: '',
+		class: 'bg-white',
 		icon: HTMX,
+		iconClass: 'w-20 h-7',
 	},
 	lua: {
 		name: 'Lua',
-		class: '',
+		class: 'bg-white text-black',
 		icon: Lua,
+	},
+	node: {
+		name: '',
+		class: 'bg-[rgb(12,15,21)] fill-white',
+		icon: Node,
+		iconClass: 'w-20 h-7',
+	},
+	mongo: {
+		name: 'Mongo',
+		class: 'bg-white text-black',
+		icon: Mongo,
 	},
 	react: {
 		name: 'React',
-		class: '',
+		class: 'bg-[rgb(27,29,35)] ',
 		icon: ReactIcon,
-	},
-	ts: {
-		name: 'TypeScript',
-		class: '',
-		icon: Typescript,
 	},
 	reactQuery: {
 		name: 'React Query',
 		class: '',
 		icon: ReactQuery,
+	},
+	templ: {
+		name: '',
+		class: 'bg-black',
+		icon: Templ,
+		iconClass: 'w-20 h-7',
+	},
+	ts: {
+		name: 'TypeScript',
+		class: 'bg-[#3178C6] text-white',
+		icon: Typescript,
+		iconClass: 'h-5 w-5',
 	},
 	zustand: {
 		name: 'Zustand',
@@ -79,19 +109,29 @@ const PROJECTS: Project[] = [
 	{
 		title: 'GoCMS',
 		description:
-			'Fugiat proident laborum nostrud deserunt. Cillum id eu dolor ea ut ad exercitation dolor exercitation aliquip enim incididunt velit officia. Velit ullamco elit aliqua occaecat nisi est sunt amet dolor ullamco sint officia. Laboris ullamco enim eu fugiat mollit excepteur exercitation duis.',
+			'Un CMS escrito en GO, usando Gin framework como backend, HTMX y Templ como front, usando completamente serverside rendering y Lua para plugins.',
 		link: 'https://rbenthem.com',
 		github: 'https://github.com/rbc33/gocms',
 		image: gocmsImage.src,
-		tags: [TAGS.go, TAGS.gin, TAGS.tailwind, TAGS.lua, TAGS.htmx],
+		tags: [TAGS.go, TAGS.gin, TAGS.tailwind, TAGS.lua, TAGS.htmx, TAGS.templ],
 	},
 	{
 		title: 'Raw Games',
-		description: 'Una Réplica de RAWG, para buscar valoraciones de videojuegos',
-		link: 'https://raw-ric-hub.vercel.app/',
+		description:
+			'Una Réplica de RAWG, para buscar valoraciones de videojuegos.',
+		link: 'https://raw.rbenthem.com/',
 		image: rawImage.src,
 		github: 'https://github.com/rbc33/game-hub',
 		tags: [TAGS.ts, TAGS.react, TAGS.reactQuery, TAGS.zustand],
+	},
+	{
+		title: 'Movie Review',
+		description:
+			'Un rebuild de la app del lilbro MERN de Greg Lim, para buscar resumenes y criticas de peliculas.',
+		link: 'https://movies.rbenthem.com',
+		image: movieRev.src,
+		github: 'https://github.com/rbc33/game-hub',
+		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
 	},
 ]
 ---
@@ -106,9 +146,10 @@ const PROJECTS: Project[] = [
 					tags.map((tag) =>
 						tag.icon ? (
 							<span
-								class={`flex gap-x-2 rounded-full py-1 px-2 bg-gray-200/80 text-black items-center mb-4 ${tag.class}`}
+								class={`flex gap-x-2 rounded-full py-1 px-2  items-center mb-4 ${tag.class}`}
 							>
-								<tag.icon class={'rounded size-7'} /> {tag.name}
+								<tag.icon class={'rounded size-7 ' + tag.iconClass} />{' '}
+								{tag.name}
 							</span>
 						) : (
 							<li class={tag.class}>{tag.name}</li>

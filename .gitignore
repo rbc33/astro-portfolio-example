@@ -1,5 +1,6 @@
 # build output
 dist/
+dep.sh
 
 # generated types
 .astro/
