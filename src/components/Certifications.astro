@@ -1,0 +1,77 @@
+---
+const EDUCATION = [
+	{
+		institution: 'IronHack',
+		title: 'Web Development',
+		description: 'Bootcamp intensivo de desarrollo full-stack con el stack MERN (MongoDB, Express, React, Node.js).',
+	},
+]
+
+const CERTIFICATIONS = [
+	{
+		issuer: 'Assembler Institute of Technology',
+		title: 'Executive DevOps Program',
+	},
+	{
+		issuer: 'SION Certifications S.L.',
+		title: 'Pentester in Ethical Hacking — Lead Auditor Certified',
+	},
+	{
+		issuer: 'IBM SkillsBuild',
+		title: 'Python Full Stack',
+	},
+	{
+		issuer: 'Google / Coursera',
+		title: 'Google IT Automation with Python',
+	},
+	{
+		issuer: 'codewithmosh.com',
+		title: 'Django from Zero to Hero',
+	},
+	{
+		issuer: 'codewithmosh.com',
+		title: 'The Ultimate Docker Course',
+	},
+]
+---
+
+<div class="space-y-10">
+	<!-- Educación -->
+	<div>
+		<h3 class="text-xl font-semibold text-white/80 mb-4">Educación</h3>
+		<ol class="relative border-s border-gray-200 dark:border-gray-700">
+			{
+				EDUCATION.map((item) => (
+					<li class="mb-8 ms-4">
+						<div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+						<p class="mb-1 text-sm font-normal leading-none text-sky-200/80">
+							{item.institution}
+						</p>
+						<h4 class="text-lg font-semibold text-white mt-1">{item.title}</h4>
+						<p class="text-base font-normal text-gray-400 text-balance">
+							{item.description}
+						</p>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+
+	<!-- Certificaciones -->
+	<div>
+		<h3 class="text-xl font-semibold text-white/80 mb-4">Certificaciones</h3>
+		<ol class="relative border-s border-gray-200 dark:border-gray-700">
+			{
+				CERTIFICATIONS.map((item) => (
+					<li class="mb-6 ms-4">
+						<div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+						<p class="mb-1 text-sm font-normal leading-none text-sky-200/80">
+							{item.issuer}
+						</p>
+						<h4 class="text-lg font-semibold text-white mt-1">{item.title}</h4>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</div>
