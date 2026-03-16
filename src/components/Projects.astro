@@ -1,7 +1,12 @@
 ---
 import gocmsImage from '../assets/gocms.webp'
 import rawImage from '../assets/raw.webp'
-import movieRev from '../assets/movies.webp'
+import movieRev from '../assets/movieReview.webp'
+import ironApt from '../assets/ironApts.webp'
+import kanBan from '../assets/kanban.webp'
+import issue from '../assets/issue.webp'
+import inventory from '../assets/inventory.webp'
+import seo from '../assets/seo.webp'
 import Go from './icons/Go.astro'
 import Tailwind from './icons/Tailwind.astro'
 import Lua from './icons/Lua.astro'
@@ -16,8 +21,12 @@ import Typescript from './icons/Typescript.astro'
 import Zustand from './icons/Zustand.astro'
 import Templ from './icons/Templ.astro'
 import Express from './icons/Express.astro'
+import MySQL from './icons/MySQL.astro'
 import Mongo from './icons/Mongo.astro'
 import Node from './icons/Node.astro'
+import Next from './icons/next.astro'
+import Prisma from './icons/Prisma.astro'
+import Postgre from './icons/Postgre.astro'
 interface Tag {
 	name: string
 	class: string
@@ -66,11 +75,21 @@ const TAGS: Record<string, Tag> = {
 		class: 'bg-white text-black',
 		icon: Lua,
 	},
+	next: {
+		name: 'Next.js',
+		class: 'bg-white text-black px-2',
+		icon: Next,
+	},
 	node: {
 		name: '',
 		class: 'bg-[rgb(12,15,21)] fill-white',
 		icon: Node,
 		iconClass: 'w-20 h-7',
+	},
+	mySql: {
+		name: '',
+		class: 'bg-white text-black',
+		icon: MySQL,
 	},
 	mongo: {
 		name: 'Mongo',
@@ -81,6 +100,16 @@ const TAGS: Record<string, Tag> = {
 		name: 'React',
 		class: 'bg-[rgb(27,29,35)] ',
 		icon: ReactIcon,
+	},
+	prisma: {
+		name: '',
+		class: 'bg-[rgb(27,29,35)] ',
+		icon: Prisma,
+	},
+	postgre: {
+		name: 'PostgreSql',
+		class: 'bg-[rgb(27,29,35)] ',
+		icon: Postgre,
 	},
 	reactQuery: {
 		name: 'React Query',
@@ -119,7 +148,7 @@ const PROJECTS: Project[] = [
 		title: 'Raw Games',
 		description:
 			'Una Réplica de RAWG, para buscar valoraciones de videojuegos.',
-		link: 'https://raw.rbenthem.com/',
+		link: 'raw-ric-hub.vercel.app',
 		image: rawImage.src,
 		github: 'https://github.com/rbc33/game-hub',
 		tags: [TAGS.ts, TAGS.react, TAGS.reactQuery, TAGS.zustand],
@@ -127,12 +156,58 @@ const PROJECTS: Project[] = [
 	{
 		title: 'Movie Review',
 		description:
-			'Un rebuild de la app del lilbro MERN de Greg Lim, para buscar resumenes y criticas de peliculas.',
-		link: 'https://movies.rbenthem.com',
+			'Un rebuild de la app del lilbro MERN de Greg Lim, para buscar resúmenes y críticas de peliculas.',
+		link: 'https://movie-review-client-58g6bknyo-ricardos-projects-5a8a4a4a.vercel.app/',
 		image: movieRev.src,
-		github: 'https://github.com/rbc33/game-hub',
+		github: 'https://github.com/rbc33/movie-review-ts.git',
 		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
 	},
+	{
+		title: 'IronApts',
+		description:
+			'Proyecto final de IronHack: Una app de gestión de apartamentos',
+		link: 'proyect3-frontend.vercel.app',
+		image: ironApt.src,
+		github: 'https://github.com/rbc33/Proyect3-frontend',
+		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
+	},
+	{
+		title: 'Kanban',
+		description:
+			'Un panel Kanban con elementos arrastrables',
+		link: 'proyect3-frontend.vercel.app',
+		image: kanBan.src,
+		github: 'https://github.com/rbc33/Proyect3-frontend',
+		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
+	},
+	{
+		title: 'Seo Analyst',
+		description:
+			'Una App de análisis del seo de una página',
+		link: 'seoanalyst.es',
+		image: seo.src,
+		github: "",
+		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express],
+	},
+	{
+		title: 'Issue tracker',
+		description:
+			'Una App de seguimiento de issues',
+		link: 'seoanalyst.es',
+		image: issue.src,
+		github: "https://github.com/rbc33/next-issue-tracker.git",
+		tags: [TAGS.ts, TAGS.next, TAGS.mySql],
+	},
+	{
+		title: 'Inventory',
+		description:
+			'Una App de inventario',
+		link: 'next-issue-tracker-psi.vercel.app',
+		image: inventory.src,
+		github: "https://github.com/rbc33/inventory.git",
+		tags: [TAGS.ts, TAGS.next, TAGS.prisma],
+	},
+
 ]
 ---
 
