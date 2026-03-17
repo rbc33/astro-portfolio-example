@@ -13,9 +13,6 @@ import CodeIcon from '../components/icons/CodeIcon.astro'
 import Projects from '../components/Projects.astro'
 import Certifications from '../components/Certifications.astro'
 import profileImage from '../assets/Untitled.jpg'
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout
@@ -32,20 +29,23 @@ import profileImage from '../assets/Untitled.jpg'
 			<h1
 				class="text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
 			>
-				Hey, soy Ricardo <a
+				<span data-i18n-es="Hey, soy Ricardo" data-i18n-en="Hey, I'm Ricardo">Hey, soy Ricardo</span>
+				<a
 					href="https://es.linkedin.com/in/ricardo-benthem-ciano-3b152916a"
 					target="_blank"
 					rel="noopener"
 					class="flex items-center justify-center"
 				>
-					<Badge>Disponible para trabajar</Badge>
+					<Badge>
+						<span data-i18n-es="Disponible para trabajar" data-i18n-en="Available for work">Disponible para trabajar</span>
+					</Badge>
 				</a>
 			</h1>
 			<h2 class="text-xl lg:text-2xl opacity-80 max-w-[700px]">
-				<span>+4 de experiencia.</span>
-				<span class="text-yellow-200/90"> Desarrollador Full-Stack </span>
-				<span class="text-red-100/90">de Málaga, España. </span>
-				<span class="opacity-85"
+				<span data-i18n-es="+4 de experiencia." data-i18n-en="+4 years of experience.">+4 de experiencia.</span>
+				<span class="text-yellow-200/90">Desarrollador Full-Stack</span>
+				<span class="text-red-100/90" data-i18n-es="de Málaga, España." data-i18n-en="from Málaga, Spain.">de Málaga, España.</span>
+				<span class="opacity-85" data-i18n-es="Especializado en llevar proyectos de inicio a fin" data-i18n-en="Specialized in taking projects from start to finish"
 					>Especializado en llevar proyectos de inicio a fin</span
 				>
 			</h2>
@@ -65,21 +65,21 @@ import profileImage from '../assets/Untitled.jpg'
 						class="size-4 lg:size-6"
 						href="mailto:ricardobenthem@gmail.com"
 					/>
-					Contactame
+					<span data-i18n-es="Contáctame" data-i18n-en="Contact me">Contáctame</span>
 				</SocialPill>
 			</nav>
 		</Container>
 		<Container id="experiencia">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
 				<Briefcase class="size-7" />
-				Experiencia
+				<span data-i18n-es="Experiencia" data-i18n-en="Experience">Experiencia</span>
 			</h2>
 			<Experience />
 		</Container>
 		<Container id="proyectos">
 			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
 				<CodeIcon class="size-7" />
-				Proyectos
+				<span data-i18n-es="Proyectos" data-i18n-en="Projects">Proyectos</span>
 			</h2>
 			<Projects />
 		</Container>
@@ -89,7 +89,7 @@ import profileImage from '../assets/Untitled.jpg'
 					<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
 					<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
 				</svg>
-				Educación & Certificaciones
+				<span data-i18n-es="Educación & Certificaciones" data-i18n-en="Education & Certifications">Educación & Certificaciones</span>
 			</h2>
 			<Certifications />
 		</Container>

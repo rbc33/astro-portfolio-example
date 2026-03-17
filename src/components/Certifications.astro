@@ -3,7 +3,10 @@ const EDUCATION = [
 	{
 		institution: 'IronHack',
 		title: 'Web Development',
-		description: 'Bootcamp intensivo de desarrollo full-stack con el stack MERN (MongoDB, Express, React, Node.js).',
+		description: {
+			es: 'Bootcamp intensivo de desarrollo full-stack con el stack MERN (MongoDB, Express, React, Node.js).',
+			en: 'Intensive full-stack development bootcamp using the MERN stack (MongoDB, Express, React, Node.js).',
+		},
 	},
 ]
 
@@ -38,7 +41,9 @@ const CERTIFICATIONS = [
 <div class="space-y-10">
 	<!-- Educación -->
 	<div>
-		<h3 class="text-xl font-semibold text-white/80 mb-4">Educación</h3>
+		<h3 class="text-xl font-semibold text-white/80 mb-4">
+			<span data-i18n-es="Educación" data-i18n-en="Education">Educación</span>
+		</h3>
 		<ol class="relative border-s border-gray-200 dark:border-gray-700">
 			{
 				EDUCATION.map((item) => (
@@ -48,8 +53,12 @@ const CERTIFICATIONS = [
 							{item.institution}
 						</p>
 						<h4 class="text-lg font-semibold text-white mt-1">{item.title}</h4>
-						<p class="text-base font-normal text-gray-400 text-balance">
-							{item.description}
+						<p
+							class="text-base font-normal text-gray-400 text-balance"
+							data-i18n-es={item.description.es}
+							data-i18n-en={item.description.en}
+						>
+							{item.description.es}
 						</p>
 					</li>
 				))
@@ -59,7 +68,9 @@ const CERTIFICATIONS = [
 
 	<!-- Certificaciones -->
 	<div>
-		<h3 class="text-xl font-semibold text-white/80 mb-4">Certificaciones</h3>
+		<h3 class="text-xl font-semibold text-white/80 mb-4">
+			<span data-i18n-es="Certificaciones" data-i18n-en="Certifications">Certificaciones</span>
+		</h3>
 		<ol class="relative border-s border-gray-200 dark:border-gray-700">
 			{
 				CERTIFICATIONS.map((item) => (

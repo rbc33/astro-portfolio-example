@@ -36,7 +36,7 @@ interface Tag {
 
 interface Project {
 	title: string
-	description: string
+	description: { es: string; en: string }
 	link?: string
 	github?: string
 	image?: string
@@ -137,8 +137,10 @@ const TAGS: Record<string, Tag> = {
 const PROJECTS: Project[] = [
 	{
 		title: 'GoCMS',
-		description:
-			'Un CMS escrito en GO, usando Gin framework como backend, HTMX y Templ como front, usando completamente serverside rendering y Lua para plugins.',
+		description: {
+			es: 'Un CMS escrito en GO, usando Gin framework como backend, HTMX y Templ como front, usando completamente serverside rendering y Lua para plugins.',
+			en: 'A CMS written in Go, using Gin as backend, HTMX and Templ as frontend with full server-side rendering, and Lua for plugins.',
+		},
 		link: 'https://rbenthem.com',
 		github: 'https://github.com/rbc33/gocms',
 		image: gocmsImage.src,
@@ -146,8 +148,10 @@ const PROJECTS: Project[] = [
 	},
 	{
 		title: 'Raw Games',
-		description:
-			'Una Réplica de RAWG, para buscar valoraciones de videojuegos.',
+		description: {
+			es: 'Una Réplica de RAWG, para buscar valoraciones de videojuegos.',
+			en: 'A RAWG replica for searching video game ratings.',
+		},
 		link: 'raw-ric-hub.vercel.app',
 		image: rawImage.src,
 		github: 'https://github.com/rbc33/game-hub',
@@ -155,8 +159,10 @@ const PROJECTS: Project[] = [
 	},
 	{
 		title: 'Movie Review',
-		description:
-			'Un rebuild de la app del lilbro MERN de Greg Lim, para buscar resúmenes y críticas de peliculas.',
+		description: {
+			es: 'Un rebuild de la app del lilbro MERN de Greg Lim, para buscar resúmenes y críticas de peliculas.',
+			en: "A rebuild of Greg Lim's MERN book app for searching movie summaries and reviews.",
+		},
 		link: 'https://movie-review-client-58g6bknyo-ricardos-projects-5a8a4a4a.vercel.app/',
 		image: movieRev.src,
 		github: 'https://github.com/rbc33/movie-review-ts.git',
@@ -164,8 +170,10 @@ const PROJECTS: Project[] = [
 	},
 	{
 		title: 'IronApts',
-		description:
-			'Proyecto final de IronHack: Una app de gestión de apartamentos',
+		description: {
+			es: 'Proyecto final de IronHack: Una app de gestión de apartamentos',
+			en: 'IronHack final project: An apartment management app.',
+		},
 		link: 'proyect3-frontend.vercel.app',
 		image: ironApt.src,
 		github: 'https://github.com/rbc33/Proyect3-frontend',
@@ -173,8 +181,10 @@ const PROJECTS: Project[] = [
 	},
 	{
 		title: 'Kanban',
-		description:
-			'Un panel Kanban con elementos arrastrables',
+		description: {
+			es: 'Un panel Kanban con elementos arrastrables',
+			en: 'A Kanban board with draggable elements.',
+		},
 		link: 'proyect3-frontend.vercel.app',
 		image: kanBan.src,
 		github: 'https://github.com/rbc33/Proyect3-frontend',
@@ -182,32 +192,37 @@ const PROJECTS: Project[] = [
 	},
 	{
 		title: 'Seo Analyst',
-		description:
-			'Una App de análisis del seo de una página',
+		description: {
+			es: 'Una App de análisis del seo de una página',
+			en: 'An SEO analysis app for web pages.',
+		},
 		link: 'seoanalyst.es',
 		image: seo.src,
-		github: "",
+		github: '',
 		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express],
 	},
 	{
 		title: 'Issue tracker',
-		description:
-			'Una App de seguimiento de issues',
+		description: {
+			es: 'Una App de seguimiento de issues',
+			en: 'An issue tracking app.',
+		},
 		link: 'seoanalyst.es',
 		image: issue.src,
-		github: "https://github.com/rbc33/next-issue-tracker.git",
+		github: 'https://github.com/rbc33/next-issue-tracker.git',
 		tags: [TAGS.ts, TAGS.next, TAGS.mySql],
 	},
 	{
 		title: 'Inventory',
-		description:
-			'Una App de inventario',
+		description: {
+			es: 'Una App de inventario',
+			en: 'An inventory management app.',
+		},
 		link: 'next-issue-tracker-psi.vercel.app',
 		image: inventory.src,
-		github: "https://github.com/rbc33/inventory.git",
+		github: 'https://github.com/rbc33/inventory.git',
 		tags: [TAGS.ts, TAGS.next, TAGS.prisma],
 	},
-
 ]
 ---
 
@@ -215,7 +230,11 @@ const PROJECTS: Project[] = [
 	PROJECTS.map(({ title, description, tags, image, github, link }) => (
 		<article>
 			<h3 class="text-2xl font-semibold mb-2">{title}</h3>
-			<p class="text-lg mb-4 text-pretty">{description}</p>
+			<p
+				class="text-lg mb-4 text-pretty"
+				data-i18n-es={description.es}
+				data-i18n-en={description.en}
+			>{description.es}</p>
 			<ul class="flex gap-x-4 items-center">
 				{tags &&
 					tags.map((tag) =>
@@ -234,7 +253,7 @@ const PROJECTS: Project[] = [
 			<span class="flex gap-x-6 mb-4 ">
 				{link && (
 					<SocialPill href={link}>
-						Ver proyecto
+						<span data-i18n-es="Ver proyecto" data-i18n-en="View project">Ver proyecto</span>
 						<ArrowRight class="size-4 lg:size-6" />
 					</SocialPill>
 				)}

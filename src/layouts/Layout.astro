@@ -23,6 +23,37 @@ import Footer from '../components/Footer.astro'
 		<Header />
 		<slot />
 		<Footer />
+		<script>
+			(function () {
+				function getLang(): string {
+					return localStorage.getItem('lang') || 'es'
+				}
+
+				function applyLang(lang: string) {
+					document
+						.querySelectorAll<HTMLElement>(`[data-i18n-${lang}]`)
+						.forEach((el) => {
+							el.textContent = el.getAttribute(`data-i18n-${lang}`)
+						})
+					document
+						.querySelectorAll<HTMLElement>('[data-lang-toggle]')
+						.forEach((btn) => {
+							btn.textContent = lang === 'es' ? 'EN' : 'ES'
+						})
+					document.documentElement.lang = lang
+				}
+
+				;(window as any).toggleLang = function () {
+					const next = getLang() === 'es' ? 'en' : 'es'
+					localStorage.setItem('lang', next)
+					applyLang(next)
+				}
+
+				document.addEventListener('DOMContentLoaded', () => {
+					applyLang(getLang())
+				})
+			})()
+		</script>
 	</body>
 </html>
 
