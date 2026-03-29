@@ -1,21 +1,21 @@
 ---
 ---
 
-<header class="flex justify-center text-xs py-5 w-[90vh] xl:w-[1120px] mx-auto">
-	<nav class="flex gap-x-10 opacity-80 justify-end whitespace-nowrap items-center">
-		<a href="#top">Home</a>
-		<a href="#experiencia" data-i18n-es="Experiencia" data-i18n-en="Experience">Experiencia</a>
-		<a href="#sobre-mi" data-i18n-es="Sobre mi" data-i18n-en="About me">Sobre mi</a>
-		<a href="#proyectos" data-i18n-es="Proyectos" data-i18n-en="Projects">Proyectos</a>
-		<a href="#educacion" data-i18n-es="Educación" data-i18n-en="Education">Educación</a>
-		<a href="#contacto" data-i18n-es="Contacto" data-i18n-en="Contact">Contacto</a>
+<header class="flex justify-center text-sm py-5 w-full max-w-3xl mx-auto px-4">
+	<nav
+		id="header-nav"
+		class="flex gap-x-8 opacity-80 justify-end whitespace-nowrap items-center"
+	>
+		<a href="#top" class="hover:opacity-100 hover:text-white transition-opacity">Home</a>
+		<a href="#experiencia" class="hover:opacity-100 hover:text-white transition-opacity" data-i18n-es="Experiencia" data-i18n-en="Experience">Experiencia</a>
+		<a href="#proyectos" class="hover:opacity-100 hover:text-white transition-opacity" data-i18n-es="Proyectos" data-i18n-en="Projects">Proyectos</a>
+		<a href="#educacion" class="hover:opacity-100 hover:text-white transition-opacity" data-i18n-es="Educación" data-i18n-en="Education">Educación</a>
 		<button
 			data-lang-toggle
 			onclick="toggleLang()"
-			class="ml-4 px-3 py-1 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 transition-colors text-white font-semibold tracking-wide"
+			class="ml-2 px-3 py-1 rounded-full border border-white/30 bg-white/5 hover:bg-white/15 hover:border-white/40 transition-all duration-200 text-white font-semibold tracking-wide"
 		>
 			EN
 		</button>
 	</nav>
 </header>
-<br />

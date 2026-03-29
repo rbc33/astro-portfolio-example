@@ -138,7 +138,7 @@ const PROJECTS: Project[] = [
 	{
 		title: 'GoCMS',
 		description: {
-			es: 'Un CMS escrito en GO, usando Gin framework como backend, HTMX y Templ como front, usando completamente serverside rendering y Lua para plugins.',
+			es: 'Un CMS escrito en Go, usando Gin como backend, HTMX y Templ para frontend con renderizado del servidor completo y Lua para plugins.',
 			en: 'A CMS written in Go, using Gin as backend, HTMX and Templ as frontend with full server-side rendering, and Lua for plugins.',
 		},
 		link: 'https://rbenthem.com',
@@ -149,7 +149,7 @@ const PROJECTS: Project[] = [
 	{
 		title: 'Raw Games',
 		description: {
-			es: 'Una Réplica de RAWG, para buscar valoraciones de videojuegos.',
+			es: 'Una réplica de RAWG para buscar valoraciones de videojuegos.',
 			en: 'A RAWG replica for searching video game ratings.',
 		},
 		link: 'raw-ric-hub.vercel.app',
@@ -160,7 +160,7 @@ const PROJECTS: Project[] = [
 	{
 		title: 'Movie Review',
 		description: {
-			es: 'Un rebuild de la app del lilbro MERN de Greg Lim, para buscar resúmenes y críticas de peliculas.',
+			es: 'Un rebuild de la app del libro MERN de Greg Lim, para buscar resúmenes y críticas de películas.',
 			en: "A rebuild of Greg Lim's MERN book app for searching movie summaries and reviews.",
 		},
 		link: 'https://movie-review-client-58g6bknyo-ricardos-projects-5a8a4a4a.vercel.app/',
@@ -193,7 +193,7 @@ const PROJECTS: Project[] = [
 	{
 		title: 'Seo Analyst',
 		description: {
-			es: 'Una App de análisis del seo de una página',
+			es: 'Una app de análisis de SEO de una página',
 			en: 'An SEO analysis app for web pages.',
 		},
 		link: 'seoanalyst.es',
@@ -228,21 +228,21 @@ const PROJECTS: Project[] = [
 
 {
 	PROJECTS.map(({ title, description, tags, image, github, link }) => (
-		<article>
+		<article class="group border border-white/10 rounded-xl p-6 mb-8 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04] transition-all duration-300">
 			<h3 class="text-2xl font-semibold mb-2">{title}</h3>
 			<p
-				class="text-lg mb-4 text-pretty"
+				class="text-base mb-4 text-white/70 text-pretty"
 				data-i18n-es={description.es}
 				data-i18n-en={description.en}
 			>{description.es}</p>
-			<ul class="flex gap-x-4 items-center">
+			<ul class="flex flex-wrap gap-2 items-center mb-4">
 				{tags &&
 					tags.map((tag) =>
 						tag.icon ? (
 							<span
-								class={`flex gap-x-2 rounded-full py-1 px-2  items-center mb-4 ${tag.class}`}
+								class={`flex gap-x-1.5 rounded-full py-1 px-2 items-center text-sm ${tag.class}`}
 							>
-								<tag.icon class={'rounded size-7 ' + tag.iconClass} />{' '}
+								<tag.icon class={'rounded size-5 ' + tag.iconClass} />{' '}
 								{tag.name}
 							</span>
 						) : (
@@ -250,24 +250,23 @@ const PROJECTS: Project[] = [
 						)
 					)}
 			</ul>
-			<span class="flex gap-x-6 mb-4 ">
+			<span class="flex gap-x-4 mb-6">
 				{link && (
 					<SocialPill href={link}>
 						<span data-i18n-es="Ver proyecto" data-i18n-en="View project">Ver proyecto</span>
-						<ArrowRight class="size-4 lg:size-6" />
+						<ArrowRight class="size-4" />
 					</SocialPill>
 				)}
-				<br />
 				{github && (
 					<SocialPill href={github}>
-						<GithubIcon class="size-4 lg:size-6" />
+						<GithubIcon class="size-4" />
 						Github
 					</SocialPill>
 				)}
 			</span>
 			{image && (
 				<img
-					class="rounded shadow-xl shadow-white/10 mb-15"
+					class="rounded-lg border border-white/10 shadow-2xl shadow-black/40 w-full group-hover:border-white/20 transition-all duration-300"
 					src={image}
 					alt={`Captura de pantalla del proyecto ${title}`}
 				/>
