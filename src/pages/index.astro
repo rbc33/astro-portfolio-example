@@ -1,97 +1,133 @@
 ---
-import Welcome from '../components/Welcome.astro'
-import Layout from '../layouts/Layout.astro'
-import Badge from '../components/Badge.astro'
-import LinkedInIcon from '../components/icons/LinkedInIcon.astro'
-import SocialPill from '../components/SocialPill.astro'
-import GithubIcon from '../components/icons/GithubIcon.astro'
-import MailIcon from '../components/icons/MailIcon.astro'
-import Experience from '../components/Experience.astro'
-import Container from '../components/Container.astro'
-import Briefcase from '../components/icons/Briefcase.astro'
-import CodeIcon from '../components/icons/CodeIcon.astro'
-import Projects from '../components/Projects.astro'
-import Certifications from '../components/Certifications.astro'
-import profileImage from '../assets/Untitled.jpg'
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GithubIcon from "../components/icons/GithubIcon.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import Experience from "../components/Experience.astro";
+import Container from "../components/Container.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/CodeIcon.astro";
+import Projects from "../components/Projects.astro";
+import Certifications from "../components/Certifications.astro";
+import profileImage from "../assets/Untitled.jpg";
 ---
 
 <Layout
-	title="Portfolio de Ricardo Benthem - Desarrollador Full-Stack"
-	description="Contratame para desarrollar aplicaciones web y moviles"
+  title="Portfolio de Ricardo Benthem - Desarrollador Full-Stack"
+  description="Contratame para desarrollar aplicaciones web y moviles"
 >
-	<main class="px-4">
-		<Container class="pt-44 pb-24">
-			<img
-				class="rounded-full w-20 h-20 md:w-24 md:h-24 mb-4"
-				src={profileImage.src}
-				alt="Ricardo Benthem, Full-Stack Developer"
-			/>
-			<h1
-				class="text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
-			>
-				<span data-i18n-es="Hey, soy Ricardo" data-i18n-en="Hey, I'm Ricardo">Hey, soy Ricardo</span>
-				<a
-					href="https://es.linkedin.com/in/ricardo-benthem-ciano-3b152916a"
-					target="_blank"
-					rel="noopener"
-					class="flex items-center justify-center"
-				>
-					<Badge>
-						<span data-i18n-es="Disponible para trabajar" data-i18n-en="Available for work">Disponible para trabajar</span>
-					</Badge>
-				</a>
-			</h1>
-			<h2 class="text-xl lg:text-2xl opacity-80 max-w-[700px]">
-				<span data-i18n-es="+4 años de experiencia." data-i18n-en="+4 years of experience.">+4 años de experiencia.</span>
-				<span class="text-yellow-200/90">Desarrollador Full-Stack</span>
-				<span class="text-red-100/90" data-i18n-es="de Málaga, España." data-i18n-en="from Málaga, Spain.">de Málaga, España.</span>
-				<span class="opacity-85" data-i18n-es="Especializado en llevar proyectos de inicio a fin" data-i18n-en="Specialized in taking projects from start to finish"
-					>Especializado en llevar proyectos de inicio a fin</span
-				>
-			</h2>
-			<nav class="flex gap-4 mt-4 flex-wrap py-1 px-2">
-				<SocialPill
-					href="https://es.linkedin.com/in/ricardo-benthem-ciano-3b152916a"
-				>
-					<LinkedInIcon class="size-4 lg:size-6" />
-					LinkedIn
-				</SocialPill>
-				<SocialPill href="https://github.com/rbc33">
-					<GithubIcon class="size-4 lg:size-6" />
-					Github
-				</SocialPill>
-				<SocialPill>
-					<MailIcon
-						class="size-4 lg:size-6"
-						href="mailto:ricardobenthem@gmail.com"
-					/>
-					<span data-i18n-es="ricardobenthem@gmail.com" data-i18n-en="ricardobenthem@gmail.com">ricardobenthem@gmail.com</span>
-				</SocialPill>
-			</nav>
-		</Container>
-		<Container id="experiencia">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
-				<Briefcase class="size-7" />
-				<span data-i18n-es="Experiencia" data-i18n-en="Experience">Experiencia</span>
-			</h2>
-			<Experience />
-		</Container>
-		<Container id="proyectos">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
-				<CodeIcon class="size-7" />
-				<span data-i18n-es="Proyectos" data-i18n-en="Projects">Proyectos</span>
-			</h2>
-			<Projects />
-		</Container>
-		<Container id="educacion">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
-				<svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-					<path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-				</svg>
-				<span data-i18n-es="Educación" data-i18n-en="Education">Educación</span>
-			</h2>
-			<Certifications />
-		</Container>
-	</main>
+  <main class="px-4">
+    <Container class="pt-44 pb-24">
+      <img
+        class="rounded-full w-20 h-20 md:w-24 md:h-24 mb-4"
+        src={profileImage.src}
+        alt="Ricardo Benthem, Full-Stack Developer"
+      />
+      <h1
+        class="text-white text-3xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        <span data-i18n-es="Hey, soy Ricardo" data-i18n-en="Hey, I'm Ricardo"
+          >Hey, soy Ricardo</span
+        >
+        <a
+          href="https://es.linkedin.com/in/ricardo-benthem-ciano-3b152916a"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center justify-center"
+        >
+          <Badge>
+            <span
+              data-i18n-es="Disponible para trabajar"
+              data-i18n-en="Available for work">Disponible para trabajar</span
+            >
+          </Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl opacity-80 max-w-[700px]">
+        <span
+          data-i18n-es="+4 años de experiencia."
+          data-i18n-en="+4 years of experience.">+4 años de experiencia.</span
+        >
+        <span class="text-yellow-200/90">Desarrollador Full-Stack</span>
+        <span
+          class="text-red-100/90"
+          data-i18n-es="de Málaga, España."
+          data-i18n-en="from Málaga, Spain.">de Málaga, España.</span
+        >
+        <span
+          class="opacity-85"
+          data-i18n-es="Especializado en MERN Stack, SQL, TypeScript y Python. Llevando proyectos de inicio a fin."
+          data-i18n-en="Specialized in MERN Stack, SQL, TypeScript and Python. Taking projects from start to finish."
+          >Especializado en MERN Stack, SQL, TypeScript y Python. Llevando
+          proyectos de inicio a fin.</span
+        >
+      </h2>
+      <nav class="flex gap-4 mt-4 flex-wrap py-1 px-2">
+        <SocialPill
+          href="https://es.linkedin.com/in/ricardo-benthem-ciano-3b152916a"
+        >
+          <LinkedInIcon class="size-4 lg:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/rbc33">
+          <GithubIcon class="size-4 lg:size-6" />
+          Github
+        </SocialPill>
+        <SocialPill>
+          <MailIcon
+            class="size-4 lg:size-6"
+            href="mailto:ricardobenthem@gmail.com"
+          />
+          <span
+            data-i18n-es="ricardobenthem@gmail.com"
+            data-i18n-en="ricardobenthem@gmail.com"
+            >ricardobenthem@gmail.com</span
+          >
+        </SocialPill>
+      </nav>
+    </Container>
+    <Container id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <Briefcase class="size-7" />
+        <span data-i18n-es="Experiencia" data-i18n-en="Experience"
+          >Experiencia</span
+        >
+      </h2>
+      <Experience />
+    </Container>
+    <Container id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <CodeIcon class="size-7" />
+        <span data-i18n-es="Proyectos" data-i18n-en="Projects">Proyectos</span>
+      </h2>
+      <Projects />
+    </Container>
+    <Container id="educacion">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-7"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 14l9-5-9-5-9 5 9 5z"></path>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+          ></path>
+        </svg>
+        <span data-i18n-es="Educación" data-i18n-en="Education">Educación</span>
+      </h2>
+      <Certifications />
+    </Container>
+  </main>
 </Layout>

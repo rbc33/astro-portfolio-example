@@ -1,276 +1,305 @@
 ---
-import gocmsImage from '../assets/gocms.webp'
-import rawImage from '../assets/raw.webp'
-import movieRev from '../assets/movieReview.webp'
-import ironApt from '../assets/ironApts.webp'
-import kanBan from '../assets/kanban.webp'
-import issue from '../assets/issue.webp'
-import inventory from '../assets/inventory.webp'
-import seo from '../assets/seo.webp'
-import Go from './icons/Go.astro'
-import Tailwind from './icons/Tailwind.astro'
-import Lua from './icons/Lua.astro'
-import GinIcon from './icons/GinIcon.astro'
-import HTMX from './icons/Htmx.astro'
-import SocialPill from './SocialPill.astro'
-import GithubIcon from './icons/GithubIcon.astro'
-import ArrowRight from './icons/ArrowRigth.astro'
-import ReactIcon from './icons/ReactIcon.astro'
-import ReactQuery from './icons/ReactQuery.astro'
-import Typescript from './icons/Typescript.astro'
-import Zustand from './icons/Zustand.astro'
-import Templ from './icons/Templ.astro'
-import Express from './icons/Express.astro'
-import MySQL from './icons/MySQL.astro'
-import Mongo from './icons/Mongo.astro'
-import Node from './icons/Node.astro'
-import Next from './icons/next.astro'
-import Prisma from './icons/Prisma.astro'
-import Postgre from './icons/Postgre.astro'
+import gocmsImage from "../assets/gocms.webp";
+import rawImage from "../assets/raw.webp";
+import movieRev from "../assets/movieReview.webp";
+import ironApt from "../assets/ironApts.webp";
+import kanBan from "../assets/kanban.webp";
+import issue from "../assets/issue.webp";
+import inventory from "../assets/inventory.webp";
+import seo from "../assets/seo.webp";
+import veil from "../assets/veil.webp"
+import Go from "./icons/Go.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Lua from "./icons/Lua.astro";
+import GinIcon from "./icons/GinIcon.astro";
+import HTMX from "./icons/Htmx.astro";
+import HTML from "./icons/HTML.astro"
+import SocialPill from "./SocialPill.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import ArrowRight from "./icons/ArrowRigth.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import ReactQuery from "./icons/ReactQuery.astro";
+import Typescript from "./icons/Typescript.astro";
+import Zustand from "./icons/Zustand.astro";
+import Templ from "./icons/Templ.astro";
+import Express from "./icons/Express.astro";
+import MySQL from "./icons/MySQL.astro";
+import Mongo from "./icons/Mongo.astro";
+import Node from "./icons/Node.astro";
+import Next from "./icons/next.astro";
+import Prisma from "./icons/Prisma.astro";
+import Postgre from "./icons/Postgre.astro";
+import Swift from "./icons/Swift.astro"
 interface Tag {
-	name: string
-	class: string
-	icon?: any
-	iconClass?: string
+  name: string;
+  class: string;
+  icon?: any;
+  iconClass?: string;
 }
 
 interface Project {
-	title: string
-	description: { es: string; en: string }
-	link?: string
-	github?: string
-	image?: string
-	tags?: Tag[]
+  title: string;
+  description: { es: string; en: string };
+  link?: string;
+  github?: string;
+  image?: string;
+  tags?: Tag[];
 }
 
 const TAGS: Record<string, Tag> = {
-	express: {
-		name: 'Express',
-		class: 'bg-white text-black',
-		icon: Express,
-	},
-	go: {
-		name: 'Golang',
-		class: 'bg-[rgb(14,106,138)]',
-		icon: Go,
-	},
-	gin: {
-		name: 'Gin',
-		class: 'bg-white text-black',
-		icon: GinIcon,
-	},
-	tailwind: {
-		name: 'Tailwind CSS',
-		class: 'bg-[#003159] text-white',
-		icon: Tailwind,
-	},
-	htmx: {
-		name: '',
-		class: 'bg-white',
-		icon: HTMX,
-		iconClass: 'w-20 h-7',
-	},
-	lua: {
-		name: 'Lua',
-		class: 'bg-white text-black',
-		icon: Lua,
-	},
-	next: {
-		name: 'Next.js',
-		class: 'bg-white text-black px-2',
-		icon: Next,
-	},
-	node: {
-		name: '',
-		class: 'bg-[rgb(12,15,21)] fill-white',
-		icon: Node,
-		iconClass: 'w-20 h-7',
-	},
-	mySql: {
-		name: '',
-		class: 'bg-white text-black',
-		icon: MySQL,
-	},
-	mongo: {
-		name: 'Mongo',
-		class: 'bg-white text-black',
-		icon: Mongo,
-	},
-	react: {
-		name: 'React',
-		class: 'bg-[rgb(27,29,35)] ',
-		icon: ReactIcon,
-	},
-	prisma: {
-		name: '',
-		class: 'bg-[rgb(27,29,35)] ',
-		icon: Prisma,
-	},
-	postgre: {
-		name: 'PostgreSql',
-		class: 'bg-[rgb(27,29,35)] ',
-		icon: Postgre,
-	},
-	reactQuery: {
-		name: 'React Query',
-		class: '',
-		icon: ReactQuery,
-	},
-	templ: {
-		name: '',
-		class: 'bg-black',
-		icon: Templ,
-		iconClass: 'w-20 h-7',
-	},
-	ts: {
-		name: 'TypeScript',
-		class: 'bg-[#3178C6] text-white',
-		icon: Typescript,
-		iconClass: 'h-5 w-5',
-	},
-	zustand: {
-		name: 'Zustand',
-		class: '',
-		icon: Zustand,
-	},
-}
+  express: {
+    name: "Express",
+    class: "bg-white text-black",
+    icon: Express,
+  },
+  go: {
+    name: "Golang",
+    class: "bg-[rgb(14,106,138)]",
+    icon: Go,
+  },
+  gin: {
+    name: "Gin",
+    class: "bg-white text-black",
+    icon: GinIcon,
+  },
+  tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  htmx: {
+    name: "",
+    class: "bg-white",
+    icon: HTMX,
+    iconClass: "w-20 h-7",
+  },
+  html: {
+    name: "HTML",
+    class: "bg-white text-black",
+    icon: HTML,
+  },
+  lua: {
+    name: "Lua",
+    class: "bg-white text-black",
+    icon: Lua,
+  },
+  next: {
+    name: "Next.js",
+    class: "bg-white text-black px-2",
+    icon: Next,
+  },
+  node: {
+    name: "",
+    class: "bg-[rgb(12,15,21)] fill-white",
+    icon: Node,
+    iconClass: "w-20 h-7",
+  },
+  mySql: {
+    name: "",
+    class: "bg-white text-black",
+    icon: MySQL,
+  },
+  mongo: {
+    name: "Mongo",
+    class: "bg-white text-black",
+    icon: Mongo,
+  },
+  react: {
+    name: "React",
+    class: "bg-[rgb(27,29,35)] ",
+    icon: ReactIcon,
+  },
+  prisma: {
+    name: "",
+    class: "bg-[rgb(27,29,35)] ",
+    icon: Prisma,
+  },
+  postgre: {
+    name: "PostgreSql",
+    class: "bg-[rgb(27,29,35)] ",
+    icon: Postgre,
+  },
+  reactQuery: {
+    name: "React Query",
+    class: "",
+    icon: ReactQuery,
+  },
+  swift: {
+	name: "swift",
+	class: "bg-white text-black",
+	icon: Swift,
+
+  },
+  templ: {
+    name: "",
+    class: "bg-black",
+    icon: Templ,
+    iconClass: "w-20 h-7",
+  },
+  ts: {
+    name: "TypeScript",
+    class: "bg-[#3178C6] text-white",
+    icon: Typescript,
+    iconClass: "h-5 w-5",
+  },
+  zustand: {
+    name: "Zustand",
+    class: "",
+    icon: Zustand,
+  },
+};
 const PROJECTS: Project[] = [
-	{
-		title: 'GoCMS',
-		description: {
-			es: 'Un CMS escrito en Go, usando Gin como backend, HTMX y Templ para frontend con renderizado del servidor completo y Lua para plugins.',
-			en: 'A CMS written in Go, using Gin as backend, HTMX and Templ as frontend with full server-side rendering, and Lua for plugins.',
-		},
-		link: 'https://rbenthem.com',
-		github: 'https://github.com/rbc33/gocms',
-		image: gocmsImage.src,
-		tags: [TAGS.go, TAGS.gin, TAGS.tailwind, TAGS.lua, TAGS.htmx, TAGS.templ],
-	},
-	{
-		title: 'Raw Games',
-		description: {
-			es: 'Una réplica de RAWG para buscar valoraciones de videojuegos.',
-			en: 'A RAWG replica for searching video game ratings.',
-		},
-		link: 'raw-ric-hub.vercel.app',
-		image: rawImage.src,
-		github: 'https://github.com/rbc33/game-hub',
-		tags: [TAGS.ts, TAGS.react, TAGS.reactQuery, TAGS.zustand],
-	},
-	{
-		title: 'Movie Review',
-		description: {
-			es: 'Un rebuild de la app del libro MERN de Greg Lim, para buscar resúmenes y críticas de películas.',
-			en: "A rebuild of Greg Lim's MERN book app for searching movie summaries and reviews.",
-		},
-		link: 'https://movie-review-client-58g6bknyo-ricardos-projects-5a8a4a4a.vercel.app/',
-		image: movieRev.src,
-		github: 'https://github.com/rbc33/movie-review-ts.git',
-		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
-	},
-	{
-		title: 'IronApts',
-		description: {
-			es: 'Proyecto final de IronHack: Una app de gestión de apartamentos',
-			en: 'IronHack final project: An apartment management app.',
-		},
-		link: 'proyect3-frontend.vercel.app',
-		image: ironApt.src,
-		github: 'https://github.com/rbc33/Proyect3-frontend',
-		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
-	},
-	{
-		title: 'Kanban',
-		description: {
-			es: 'Un panel Kanban con elementos arrastrables',
-			en: 'A Kanban board with draggable elements.',
-		},
-		link: 'proyect3-frontend.vercel.app',
-		image: kanBan.src,
-		github: 'https://github.com/rbc33/Proyect3-frontend',
-		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
-	},
-	{
-		title: 'Seo Analyst',
-		description: {
-			es: 'Una app de análisis de SEO de una página',
-			en: 'An SEO analysis app for web pages.',
-		},
-		link: 'seoanalyst.es',
-		image: seo.src,
-		github: '',
-		tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express],
-	},
-	{
-		title: 'Issue tracker',
-		description: {
-			es: 'Una App de seguimiento de issues',
-			en: 'An issue tracking app.',
-		},
-		link: 'seoanalyst.es',
-		image: issue.src,
-		github: 'https://github.com/rbc33/next-issue-tracker.git',
-		tags: [TAGS.ts, TAGS.next, TAGS.mySql],
-	},
-	{
-		title: 'Inventory',
-		description: {
-			es: 'Una App de inventario',
-			en: 'An inventory management app.',
-		},
-		link: 'next-issue-tracker-psi.vercel.app',
-		image: inventory.src,
-		github: 'https://github.com/rbc33/inventory.git',
-		tags: [TAGS.ts, TAGS.next, TAGS.prisma],
-	},
-]
+  {
+    title: "Veil",
+    description: {
+      es: "Cliente de IA nativo para macOS que desaparece al compartir pantalla. Compatible con Ollama, OpenAI y Claude. Sin Electron, sin suscripción.",
+      en: "Native macOS AI client invisible to screen sharing. Supports Ollama, OpenAI and Claude. No Electron, no subscription.",
+    },
+	link: "https://rbc33.github.io/Veil/",
+	github: "https://github.com/rbc33/Veil",
+  image: veil.src,
+	tags: [TAGS.swift]
+  },
+  {
+    title: "GoCMS",
+    description: {
+      es: "Un CMS escrito en Go, usando Gin como backend, HTMX y Templ para frontend con renderizado del servidor completo y Lua para plugins.",
+      en: "A CMS written in Go, using Gin as backend, HTMX and Templ as frontend with full server-side rendering, and Lua for plugins.",
+    },
+    link: "https://rbenthem.com",
+    github: "https://github.com/rbc33/gocms",
+    image: gocmsImage.src,
+    tags: [TAGS.go, TAGS.gin, TAGS.tailwind, TAGS.lua, TAGS.htmx, TAGS.templ],
+  },
+  {
+    title: "Raw Games",
+    description: {
+      es: "Una réplica de RAWG para buscar valoraciones de videojuegos.",
+      en: "A RAWG replica for searching video game ratings.",
+    },
+    link: "raw-ric-hub.vercel.app",
+    image: rawImage.src,
+    github: "https://github.com/rbc33/game-hub",
+    tags: [TAGS.ts, TAGS.react, TAGS.reactQuery, TAGS.zustand],
+  },
+  {
+    title: "Movie Review",
+    description: {
+      es: "Un rebuild de la app del libro MERN de Greg Lim, para buscar resúmenes y críticas de películas.",
+      en: "A rebuild of Greg Lim's MERN book app for searching movie summaries and reviews.",
+    },
+    link: "https://movie-review-client-58g6bknyo-ricardos-projects-5a8a4a4a.vercel.app/",
+    image: movieRev.src,
+    github: "https://github.com/rbc33/movie-review-ts.git",
+    tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
+  },
+  {
+    title: "IronApts",
+    description: {
+      es: "Proyecto final de IronHack: Una app de gestión de apartamentos",
+      en: "IronHack final project: An apartment management app.",
+    },
+    link: "proyect3-frontend.vercel.app",
+    image: ironApt.src,
+    github: "https://github.com/rbc33/Proyect3-frontend",
+    tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
+  },
+  {
+    title: "Kanban",
+    description: {
+      es: "Un panel Kanban con elementos arrastrables",
+      en: "A Kanban board with draggable elements.",
+    },
+    link: "proyect3-frontend.vercel.app",
+    image: kanBan.src,
+    github: "https://github.com/rbc33/Proyect3-frontend",
+    tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express, TAGS.mongo],
+  },
+  {
+    title: "Seo Analyst",
+    description: {
+      es: "Una app de análisis de SEO de una página",
+      en: "An SEO analysis app for web pages.",
+    },
+    link: "seoanalyst.es",
+    image: seo.src,
+    github: "",
+    tags: [TAGS.ts, TAGS.react, TAGS.node, TAGS.express],
+  },
+  {
+    title: "Issue tracker",
+    description: {
+      es: "Una App de seguimiento de issues",
+      en: "An issue tracking app.",
+    },
+    link: "seoanalyst.es",
+    image: issue.src,
+    github: "https://github.com/rbc33/next-issue-tracker.git",
+    tags: [TAGS.ts, TAGS.next, TAGS.mySql],
+  },
+  {
+    title: "Inventory",
+    description: {
+      es: "Una App de inventario",
+      en: "An inventory management app.",
+    },
+    link: "next-issue-tracker-psi.vercel.app",
+    image: inventory.src,
+    github: "https://github.com/rbc33/inventory.git",
+    tags: [TAGS.ts, TAGS.next, TAGS.prisma],
+  },
+];
 ---
 
 {
-	PROJECTS.map(({ title, description, tags, image, github, link }) => (
-		<article class="group border border-white/10 rounded-xl p-6 mb-8 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04] transition-all duration-300">
-			<h3 class="text-2xl font-semibold mb-2">{title}</h3>
-			<p
-				class="text-base mb-4 text-white/70 text-pretty"
-				data-i18n-es={description.es}
-				data-i18n-en={description.en}
-			>{description.es}</p>
-			<ul class="flex flex-wrap gap-2 items-center mb-4">
-				{tags &&
-					tags.map((tag) =>
-						tag.icon ? (
-							<span
-								class={`flex gap-x-1.5 rounded-full py-1 px-2 items-center text-sm ${tag.class}`}
-							>
-								<tag.icon class={'rounded size-5 ' + tag.iconClass} />{' '}
-								{tag.name}
-							</span>
-						) : (
-							<li class={tag.class}>{tag.name}</li>
-						)
-					)}
-			</ul>
-			<span class="flex gap-x-4 mb-6">
-				{link && (
-					<SocialPill href={link}>
-						<span data-i18n-es="Ver proyecto" data-i18n-en="View project">Ver proyecto</span>
-						<ArrowRight class="size-4" />
-					</SocialPill>
-				)}
-				{github && (
-					<SocialPill href={github}>
-						<GithubIcon class="size-4" />
-						Github
-					</SocialPill>
-				)}
-			</span>
-			{image && (
-				<img
-					class="rounded-lg border border-white/10 shadow-2xl shadow-black/40 w-full group-hover:border-white/20 transition-all duration-300"
-					src={image}
-					alt={`Captura de pantalla del proyecto ${title}`}
-				/>
-			)}
-		</article>
-	))
+  PROJECTS.map(({ title, description, tags, image, github, link }) => (
+    <article class="group border border-white/10 rounded-xl p-6 mb-8 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.04] transition-all duration-300">
+      <h3 class="text-2xl font-semibold mb-2">{title}</h3>
+      <p
+        class="text-base mb-4 text-white/70 text-pretty"
+        data-i18n-es={description.es}
+        data-i18n-en={description.en}
+      >
+        {description.es}
+      </p>
+      <ul class="flex flex-wrap gap-2 items-center mb-4">
+        {tags &&
+          tags.map((tag) =>
+            tag.icon ? (
+              <span
+                class={`flex gap-x-1.5 rounded-full py-1 px-2 items-center text-sm ${tag.class}`}
+              >
+                <tag.icon class={"rounded size-5 " + tag.iconClass} />{" "}
+                {tag.name}
+              </span>
+            ) : (
+              <li class={tag.class}>{tag.name}</li>
+            ),
+          )}
+      </ul>
+      <span class="flex gap-x-4 mb-6">
+        {link && (
+          <SocialPill href={link}>
+            <span data-i18n-es="Ver proyecto" data-i18n-en="View project">
+              Ver proyecto
+            </span>
+            <ArrowRight class="size-4" />
+          </SocialPill>
+        )}
+        {github && (
+          <SocialPill href={github}>
+            <GithubIcon class="size-4" />
+            Github
+          </SocialPill>
+        )}
+      </span>
+      {image && (
+        <img
+          class="rounded-lg border border-white/10 shadow-2xl shadow-black/40 w-full group-hover:border-white/20 transition-all duration-300"
+          src={image}
+          alt={`Captura de pantalla del proyecto ${title}`}
+        />
+      )}
+    </article>
+  ))
 }
